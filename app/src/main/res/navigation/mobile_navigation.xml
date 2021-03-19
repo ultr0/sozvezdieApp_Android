@@ -7,19 +7,58 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="ru.andlancer.kdcsozvezdie.ui.home.HomeFragment"
+        android:name="ru.andlancer.kdcsozvezdie.ui.home.FragmentAppHome"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_app_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_fragmentSmenaDescription"
+            app:destination="@id/fragmentSmenaDescription"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="ru.andlancer.kdcsozvezdie.ui.dashboard.DashboardFragment"
+        android:name="ru.andlancer.kdcsozvezdie.ui.app.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="ru.andlancer.kdcsozvezdie.ui.notifications.NotificationsFragment"
+        android:name="ru.andlancer.kdcsozvezdie.ui.app.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/fragmentSmenaBron"
+        android:name="ru.andlancer.kdcsozvezdie.ui.app.smena.FragmentSmenaBron"
+        tools:layout="@layout/fragment_smena_bron"
+        android:label="FragmentSmenaBron" >
+        <action
+            android:id="@+id/action_fragmentSmenaBron_to_fragmentSmenaQR"
+            app:destination="@id/fragmentSmenaQR"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSmenaDescription"
+        android:name="ru.andlancer.kdcsozvezdie.ui.app.smena.FragmentSmenaDescription"
+        tools:layout="@layout/fragment_smena_description"
+        android:label="FragmentSmenaDescription" >
+        <action
+            android:id="@+id/action_fragmentSmenaDescription_to_fragmentSmenaBron"
+            app:destination="@id/fragmentSmenaBron"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSmenaQR"
+        tools:layout="@layout/fragment_smena_q_r"
+        android:name="ru.andlancer.kdcsozvezdie.ui.app.smena.FragmentSmenaQR"
+        android:label="FragmentSmenaQR" />
 </navigation>

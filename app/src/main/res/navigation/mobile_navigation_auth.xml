@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_auth"
+    app:startDestination="@id/fragmentAuthReg">
+    <fragment
+        android:id="@+id/fragmentAuthLogin"
+        android:name="ru.andlancer.kdcsozvezdie.ui.auth.FragmentAuthLogin"
+        android:label="fragment_auth_login"
+        tools:layout="@layout/fragment_auth_login" />
+    <fragment
+        android:id="@+id/fragmentAuthReg"
+        android:name="ru.andlancer.kdcsozvezdie.ui.auth.FragmentAuthReg"
+        android:label="fragment_auth_reg"
+        tools:layout="@layout/fragment_auth_reg" >
+        <action
+            android:id="@+id/action_fragmentAuthReg_to_fragmentAuthLogin"
+            app:destination="@id/fragmentAuthLogin"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
+</navigation>

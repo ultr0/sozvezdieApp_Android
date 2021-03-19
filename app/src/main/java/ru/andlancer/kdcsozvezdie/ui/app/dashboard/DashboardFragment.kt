@@ -1,4 +1,4 @@
-package ru.andlancer.kdcsozvezdie.ui.dashboard
+package ru.andlancer.kdcsozvezdie.ui.app.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater

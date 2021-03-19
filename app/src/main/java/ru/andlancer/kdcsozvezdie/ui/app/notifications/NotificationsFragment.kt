@@ -1,4 +1,4 @@
-package ru.andlancer.kdcsozvezdie.ui.notifications
+package ru.andlancer.kdcsozvezdie.ui.app.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater
