@@ -35,11 +35,14 @@ class FragmentAuthLogin : Fragment(R.layout.fragment_auth_login) {
 
 
         with(bindingFragment){
-            buttonActionLogin.setOnClickListener {
-                startActivity(
-                    Intent(requireContext(), MainActivity::class.java)
-                    //Intent(this, MainActivity::class.java)
-                )
+//            buttonActionLogin.setOnClickListener {
+//                startActivity(
+//                    Intent(requireContext(), MainActivity::class.java)
+//                    //Intent(this, MainActivity::class.java)
+//                )
+//            }
+            buttonActionReg.setOnClickListener {
+                Navigation.findNavController(it).navigate(R.id.action_fragmentAuthLogin_to_fragmentAuthReg)
             }
         }
 

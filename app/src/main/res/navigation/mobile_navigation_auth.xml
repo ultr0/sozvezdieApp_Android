@@ -3,23 +3,50 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation_auth"
-    app:startDestination="@id/fragmentAuthReg">
+    app:startDestination="@id/fragmentAuthRole">
     <fragment
         android:id="@+id/fragmentAuthLogin"
         android:name="ru.andlancer.kdcsozvezdie.ui.auth.FragmentAuthLogin"
         android:label="fragment_auth_login"
-        tools:layout="@layout/fragment_auth_login" />
+        tools:layout="@layout/fragment_auth_login" >
+        <action
+            android:id="@+id/action_fragmentAuthLogin_to_fragmentAuthReg"
+            app:destination="@id/fragmentAuthReg" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentAuthReg"
         android:name="ru.andlancer.kdcsozvezdie.ui.auth.FragmentAuthReg"
         android:label="fragment_auth_reg"
         tools:layout="@layout/fragment_auth_reg" >
         <action
-            android:id="@+id/action_fragmentAuthReg_to_fragmentAuthLogin"
+            android:id="@+id/action_fragmentAuthReg_to_fragmentAuthReg2"
+            app:destination="@id/fragmentAuthReg2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAuthRole"
+        android:name="ru.andlancer.kdcsozvezdie.ui.auth.FragmentAuthRole"
+        tools:layout="@layout/fragment_auth_role"
+        android:label="FragmentAuthRole" >
+        <action
+            android:id="@+id/action_fragmentAuthRole_to_fragmentAuthLogin"
             app:destination="@id/fragmentAuthLogin"
-            app:enterAnim="@anim/fragment_fade_enter"
-            app:exitAnim="@anim/fragment_fade_exit"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
             app:popEnterAnim="@anim/fragment_close_enter"
             app:popExitAnim="@anim/fragment_close_exit" />
     </fragment>
+    <fragment
+        android:id="@+id/fragmentAuthReg2"
+        android:name="ru.andlancer.kdcsozvezdie.ui.auth.FragmentAuthReg2"
+        tools:layout="@layout/fragment_auth_reg2"
+        android:label="FragmentAuthReg2" >
+        <action
+            android:id="@+id/action_fragmentAuthReg2_to_fragmentAuthFirstLogin"
+            app:destination="@id/fragmentAuthFirstLogin" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAuthFirstLogin"
+        tools:layout="@layout/fragment_auth_first_login"
+        android:name="ru.andlancer.kdcsozvezdie.ui.auth.FragmentAuthFirstLogin"
+        android:label="FragmentAuthFirstLogin" />
 </navigation>

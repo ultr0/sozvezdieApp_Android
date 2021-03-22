@@ -36,7 +36,7 @@ class FragmentAppHome : Fragment(R.layout.fragment_app_home) {
             binding.action.setOnClickListener {
                 val b = Bundle()
                 b.putString("title", item)
-                Navigation.findNavController(binding.root).navigate(R.id.action_navigation_home_to_fragmentSmenaDescription, b)
+               // Navigation.findNavController(binding.root).navigate(R.id.action_navigation_home_to_fragmentSmenaDescription, b)
             }
         }
 

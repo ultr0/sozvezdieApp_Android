@@ -9,15 +9,7 @@
         android:id="@+id/navigation_home"
         android:name="ru.andlancer.kdcsozvezdie.ui.home.FragmentAppHome"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_app_home" >
-        <action
-            android:id="@+id/action_navigation_home_to_fragmentSmenaDescription"
-            app:destination="@id/fragmentSmenaDescription"
-            app:enterAnim="@anim/fragment_fade_enter"
-            app:exitAnim="@anim/fragment_fade_exit"
-            app:popEnterAnim="@anim/fragment_close_enter"
-            app:popExitAnim="@anim/fragment_close_exit" />
-    </fragment>
+        tools:layout="@layout/fragment_app_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -55,10 +47,22 @@
             app:exitAnim="@anim/fragment_fade_exit"
             app:popEnterAnim="@anim/fragment_close_enter"
             app:popExitAnim="@anim/fragment_close_exit" />
+        <action
+            android:id="@+id/action_fragmentSmenaDescription_to_fragmentSmenaQR"
+            app:destination="@id/fragmentSmenaQR" />
     </fragment>
     <fragment
         android:id="@+id/fragmentSmenaQR"
         tools:layout="@layout/fragment_smena_q_r"
         android:name="ru.andlancer.kdcsozvezdie.ui.app.smena.FragmentSmenaQR"
         android:label="FragmentSmenaQR" />
+    <fragment
+        android:id="@+id/navigation_smena"
+        android:name="ru.andlancer.kdcsozvezdie.ui.app.smena.FragmentSmena"
+        tools:layout="@layout/fragment_smena"
+        android:label="FragmentSmena" >
+        <action
+            android:id="@+id/action_navigation_smena_to_fragmentSmenaDescription"
+            app:destination="@id/fragmentSmenaDescription" />
+    </fragment>
 </navigation>

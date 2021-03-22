@@ -7,77 +7,146 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:padding="@dimen/activity_horizontal_margin">
 
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="24dp"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/action_reg_next"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/imageView17">
 
-            <com.google.android.material.textfield.TextInputLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp">
+                android:layout_height="wrap_content">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:hint="e-mail" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp">
+                    <TextView
+                        android:id="@+id/name"
+                        style="@style/TextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Добро пожаловать!"
+                        android:textSize="24sp" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:hint="password" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    <TextView
+                        android:id="@+id/textView7"
+                        style="@style/TextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="45dp"
+                        android:layout_marginBottom="45dp"
+                        android:gravity="center"
+                        android:text="Выберите тип профиля, а также укажите город:"
+                        android:textSize="25sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp">
+                    <ru.andlancer.kdcsozvezdie.widgets.spiner.SpinnerView
+                        android:id="@+id/spinner"
+                        style="@style/SpinerBase"
+                        android:layout_width="match_parent"
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:hint="password" />
-            </com.google.android.material.textfield.TextInputLayout>
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:clickable="true"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:hint="[Select an Android Model...]"
+                        android:textColor="@color/text"
+                        android:textColorHint="@color/text"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:arrow_icon="@drawable/vniz"
+                        app:collapse_item_display_background="@drawable/edittext_panel"
+                        app:drop_down_list_background="@drawable/drop_down_bg"
+                        app:dropdown_max_height="100dp"
+                        app:expand_item_display_background="@drawable/edittext_panel"
+                        app:hint_text_enable="true"
 
-            <CheckBox
-                android:id="@+id/checkBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:checked="true"
-                android:text="rules" />
+                        />
 
-            <Button
-                android:id="@+id/button_action_reg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:text="Зарегистрироваться" />
+                    <ru.andlancer.kdcsozvezdie.widgets.spiner.SpinnerView
+                        android:id="@+id/spinner2"
+                        style="@style/SpinerBase"
+                        android:layout_width="match_parent"
 
-            <Button
-                android:id="@+id/button_action_login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:text="Войти" />
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginBottom="30dp"
+                        android:clickable="true"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:hint="[Select an Android Model...]"
+                        android:textColor="@color/text"
+                        android:textColorHint="@color/text"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:arrow_icon="@drawable/vniz"
+                        app:collapse_item_display_background="@drawable/edittext_panel"
+                        app:drop_down_list_background="@drawable/drop_down_bg"
+                        app:dropdown_max_height="100dp"
+
+                        app:expand_item_display_background="@drawable/edittext_panel"
+                        app:hint_text_enable="true" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            style="@style/TextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Я прочитал и принимаю условия Пользовательского соглашения "
+                            android:textStyle="bold" />
+
+                        <CheckBox
+                            android:id="@+id/checkBox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
         </LinearLayout>
+
+        <android.widget.Button
+            android:id="@+id/action_reg_next"
+            style="@style/ButtonRedBorder"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="Продолжить регистрацию"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

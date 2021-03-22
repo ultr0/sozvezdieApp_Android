@@ -34,11 +34,14 @@ class FragmentSmenaDescription : Fragment(R.layout.fragment_smena_description) {
 
 
         with(bindingFragment){
-           arguments?.getString("title")?.let {
-               title.text = it
-           }
+//           arguments?.getString("title")?.let {
+//               title.text = it
+//           }
+//            buttonActionBron.setOnClickListener {
+//                Navigation.findNavController(root).navigate(R.id.action_fragmentSmenaDescription_to_fragmentSmenaBron)
+//            }
             buttonActionBron.setOnClickListener {
-                Navigation.findNavController(root).navigate(R.id.action_fragmentSmenaDescription_to_fragmentSmenaBron)
+                Navigation.findNavController(root).navigate(R.id.action_fragmentSmenaDescription_to_fragmentSmenaQR)
             }
         }
 

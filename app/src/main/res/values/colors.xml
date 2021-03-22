@@ -7,4 +7,17 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="splash_fon">#183F96</color>
+    <color name="first_login_fon">#254896</color>
+    <color name="qr_fon">#FBBA00</color>
+
+    <color name="gradient_r_o_start">#FE5000</color>
+    <color name="gradient_r_o_end">#FBBA00</color>
+
+    <color name="text_button">#F6F1FB</color>
+
+    <color name="text">#3F414E</color>
+
+    <color name="solid_panel_gray">#F2F3F7</color>
 </resources>

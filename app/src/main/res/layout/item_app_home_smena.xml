@@ -10,13 +10,15 @@
             type="String" />
 
     </data>
-<Button
- android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@{item}"
-    android:id="@+id/action"
-    >
 
-</Button>
+    <ImageView
+        android:id="@+id/action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/test_item_smena">
+
+    </ImageView>
 
 </layout>

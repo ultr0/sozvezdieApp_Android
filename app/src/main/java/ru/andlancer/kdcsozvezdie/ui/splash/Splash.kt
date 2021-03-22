@@ -1,8 +1,10 @@
 package ru.andlancer.kdcsozvezdie.ui.splash
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ProgressBar
+import androidx.appcompat.app.AppCompatActivity
+import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import ru.andlancer.kdcsozvezdie.R
@@ -85,17 +87,36 @@ class Splash : AppCompatActivity() {
     }
 
     fun delay() {
-        Single.just("do it!").delay(3, TimeUnit.SECONDS).observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
-                finish()
-                startActivity(
-                    Intent(this, AuthActivity::class.java)
-                        //Intent(this, MainActivity::class.java)
-                )
+//        Single.just("do it!").delay(3, TimeUnit.SECONDS).observeOn(AndroidSchedulers.mainThread())
+//            .subscribe({
+//                finish()
+//                startActivity(
+//                    Intent(this, AuthActivity::class.java)
+//                    //Intent(this, MainActivity::class.java)
+//                )
+//            },
+//                {
+//
+//                })
+
+        Observable.intervalRange(
+            0L, 100L, 35, 10, TimeUnit.MILLISECONDS,
+            AndroidSchedulers.mainThread()
+        )
+            .subscribe({ v ->
+                findViewById<ProgressBar>(R.id.progress).setProgress(v.toInt())
             },
                 {
 
-                })
+                },
+                {
+                    finish()
+                    startActivity(
+                        Intent(this, AuthActivity::class.java)
+                        //Intent(this, MainActivity::class.java)
+                    )
+                }
+            )
 
     }
 }
